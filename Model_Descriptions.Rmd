@@ -1,0 +1,40 @@
+---
+title: "Model Descriptions"
+author: "Matt Weldy"
+date: "3/9/2021"
+bibliography: bibliography.json
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Huggins model
+
+The conditional likelihood abundance estimator proposed by @huggins_statistical_1989 and @alho_logistic_1990, which was further extended in @huggins_practical_1991, is an extension to previous abundance estimators to account for heterogeneous capture probabilities ($p$). The model estimates individual capture probabilities and abundance conditional on captured individuals.
+
+$$  \mathcal{L} = \prod_{i=1}^n \prod_{t=1}^t p_{i,t}^{z_{i,t}}(1-p_{i,t})^{1-z_{i,t}} $$
+where, \linebreak
+  $z_{i,t}$ takes the value of 1 if individual $i$ has been captured before occasion $t$ and 0 otherwise.
+
+Thus the capture history $y_{i,t}$ is used to estimate the capture probability of individual $i$ as a Bernoulli trial,
+$$y_{i,t} \sim Bernoulli(p_{i,t}) $$
+and abundance $\hat{N}$ is derived condtional on the count of known individuals ($C$), sometimes referred to the minimum number of known alive ($MNKA$).
+$$\hat{N} = \frac{C}{1-\prod^{t}(1-p_t)}$$
+Variation in detection probability can be modeled using linear logistic models or other variations used to estimate probabilities 0-1.
+
+
+```{r cars}
+summary(cars)
+```
+
+## CJS model
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
