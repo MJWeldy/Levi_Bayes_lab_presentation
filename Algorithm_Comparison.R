@@ -1,11 +1,11 @@
 
 library(knitr)
-library(reticulate) # greta uses tensorflow which is accessed through reticulate
-source("install_greta.R") #only install if you are familiar with reticulate or dont use it at all greta will not run without it!!!
-reticulate::use_condaenv("r-reticulate")
-reticulate::py_config()
-library(DiagrammeR) #Take a long time to install
-library(igraph) #Takes a long time to install
+# library(reticulate) # greta uses tensorflow which is accessed through reticulate
+# source("install_greta.R") #only install if you are familiar with reticulate or dont use it at all greta will not run without it!!!
+# reticulate::use_condaenv("r-reticulate")
+# reticulate::py_config()
+# library(DiagrammeR) #Take a long time to install
+# library(igraph) #Takes a long time to install
 
 library(coda)
 library(bayesplot)
